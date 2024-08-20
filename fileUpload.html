@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lightning-file-upload label="Upload file" accept={acceptedFormats} record-id={recordId}
+            onuploadfinished={handleUploadFinished} multiple=" true">
+        </lightning-file-upload>
+
+        <template lwc:if={showTable}>
+            <lightning-datatable columns={columns} data={files} key-field="Id" hide-checkbox-column="true" onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
